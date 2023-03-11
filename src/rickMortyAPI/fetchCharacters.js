@@ -15,3 +15,10 @@ export async function fetchCharacterById(characterId) {
   const { data } = await axios.get(url);
   return data;
 }
+
+export async function fetchCharacterByName(characterName, page) {
+  const url = `/?name=${characterName}&page=${page}`;
+
+  const { data } = await axios.get(url);
+  return data;
+}

@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
+
 import logo from "../images/main-logo.png";
 
 export const Header = () => {
   return (
-    <div>
-      <header>
-        <h1>Rick and Morty application</h1>
-        <img src={logo} alt="rick and morty logo" width="600px" />
+    <div className="container">
+      <header className="header">
+        <Link className="header-link" to="/">
+          <img className="logo" src={logo} alt="rick and morty logo" />
+        </Link>
       </header>
     </div>
   );

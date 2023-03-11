@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
+
 import { fetchCharacterById } from "../rickMortyAPI/fetchCharacters";
 import { CharacterInfo } from "../components/CharacterInfo";
 import { Loader } from "../components/Loader";
 
+import { CharacterPageHeader } from "../components/CharacterPageHeader";
+
 export const Character = () => {
   const { id } = useParams();
+  const location = useLocation();
+  const backLinkHref = location?.state?.from ?? "/";
+
   const [characterInfo, setCharacterInfo] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,19 +37,7 @@ export const Character = () => {
 
   return (
     <>
-      <div>
-        <header>
-          <Link
-            to="/"
-            style={{
-              color: "#2c2e30",
-            }}
-          >
-            GO BACK
-          </Link>
-          <h1>Character page</h1>
-        </header>
-      </div>
+      <CharacterPageHeader backLinkHref={backLinkHref} />
 
       {loading ? (
         <Loader />
