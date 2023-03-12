@@ -103,13 +103,7 @@ export const Home = () => {
         )
       )}
 
-      <div
-        style={{
-          display: "flex",
-          gap: "12px",
-          justifyContent: "center",
-        }}
-      >
+      <div className="load-more-wrap">
         {page !== 1 && (
           <ButtonLoadMore loadMore={loadPrevPage} buttonName={"prev"} />
         )}

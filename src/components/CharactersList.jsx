@@ -11,7 +11,11 @@ export const CharactersList = ({ characters }) => {
           {characters.map(({ id, name, species, image }) => (
             <li className="home-item" key={id}>
               <Link to={`character/${id}`} state={{ from: location }}>
-                <img src={image} alt="rick and morty logo" width="240px" />
+                <img
+                  className="home-image"
+                  src={image}
+                  alt="rick and morty logo"
+                />
                 <div className="item-wrap">
                   <p className="item-title">{name}</p>
                   <p className="item-description"> {species}</p>

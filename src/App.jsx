@@ -1,9 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 
-import { NotFound } from "./pages/NotFound";
 import { Home } from "./pages/Home";
 import { Character } from "./pages/Character";
+import { NotFound } from "./pages/NotFound";
 
 export const App = () => {
   return (
