@@ -1,15 +1,16 @@
+import styled from "styled-components";
 import { RotatingLines } from "react-loader-spinner";
+
+const StyledLoader = styled.section`
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Loader = () => {
   return (
-    <div
-      style={{
-        height: "75vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <StyledLoader>
       <RotatingLines
         strokeColor="grey"
         strokeWidth="4"
@@ -17,6 +18,6 @@ export const Loader = () => {
         width="96"
         visible={true}
       />
-    </div>
+    </StyledLoader>
   );
 };

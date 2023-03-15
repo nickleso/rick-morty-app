@@ -1,15 +1,16 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { Header } from "../components/Header";
-import { Filter } from "../components/Filter";
+import { Header } from "../components/HomePageComponents/Header";
+import { Filter } from "../components/Filter/Filter";
 import {
   fetchCharacterByName,
   fetchCharacters,
 } from "../rickMortyAPI/fetchCharacters";
-import { CharactersList } from "../components/CharactersList";
+import { CharactersList } from "../components/HomePageComponents/CharactersList";
 import { Loader } from "../components/Loader";
-import { ButtonLoadMore } from "../components/ButtonLoadMore";
+import { ButtonLoadMore } from "../components/ButtonLoadMore/ButtonLoadMore";
+import { LoadMoreContainer } from "../components/ButtonLoadMore/ButtonLoadMore.styled";
 
 export const Home = () => {
   const [charactersList, setCharactersList] = useState([]);
@@ -103,7 +104,7 @@ export const Home = () => {
         )
       )}
 
-      <div className="load-more-wrap">
+      <LoadMoreContainer>
         {page !== 1 && (
           <ButtonLoadMore loadMore={loadPrevPage} buttonName={"prev"} />
         )}
@@ -111,7 +112,7 @@ export const Home = () => {
         {page !== totalPages && (
           <ButtonLoadMore loadMore={loadNextPage} buttonName={"next"} />
         )}
-      </div>
+      </LoadMoreContainer>
     </>
   );
 };

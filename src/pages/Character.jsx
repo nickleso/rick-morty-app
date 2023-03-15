@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 
 import { fetchCharacterById } from "../rickMortyAPI/fetchCharacters";
-import { CharacterInfo } from "../components/CharacterInfo";
+import { CharacterInfo } from "../components/CharacterPageComponents/CharacterInfo";
+import { CharacterPageHeader } from "../components/CharacterPageComponents/CharacterPageHeader";
 import { Loader } from "../components/Loader";
-
-import { CharacterPageHeader } from "../components/CharacterPageHeader";
 
 export const Character = () => {
   const { id } = useParams();
@@ -30,10 +29,6 @@ export const Character = () => {
 
     searchCharacterById();
   }, [id]);
-
-  // if (!characterInfo) {
-  //   return null;
-  // }
 
   return (
     <>
